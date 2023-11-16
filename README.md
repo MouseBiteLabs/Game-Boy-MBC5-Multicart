@@ -106,8 +106,8 @@ SW3, split into two separate switches SW3A (bottom half) and SW3B (top half), co
 
 Here's a list of example cartridges you can make with these settings:
 1) Pokemon Red, Blue, Yellow, and Green on one cartridge with separate save files that changes via powering the Game Boy off and on again: **Mode 1B** with 1 Mbit SRAM
-2) Pokemon Gold and Silver with the same save file that hotswaps when you press the button on the cartridge (changing games during gameplay): **Mode 3C** with 256 Kbit SRAM
-3) Pokemon Crystal with a reset button: **Mode 4C** with 256 Kbit SRAM
+2) Pokemon Red and Blue with the same save file that hotswaps when you press the button on the cartridge (changing games during gameplay): **Mode 3C** with 256 Kbit SRAM
+3) Pokemon Yellow with a reset button: **Mode 4C** with 256 Kbit SRAM
 
 ## How to Program Games
 
@@ -125,26 +125,7 @@ On the back of the board are five test points. Here's where they are connected:
 - TP4: Ground
 - TP5: VCC input voltage
 
-After you assemble your game, you should measure the current out of the battery. But first, you should program it with the GBxCart, or if you programmed the EEPROM separately, put it into a Game Boy and cycle power once. Then, flip the PCB upside down on a non-conductive surface (not your leg), and set your multimeter in DC millivolts (or volts). Put the positive probe on TP3 and the negative probe on TP2. If you used a 10kΩ for R1, as indicated in the BOM, you should read a voltage in the single or tens of millivolts for non-RTC games, or up to 60 mV for games using a real-time clock. If you have something much higher, especially voltages above 60mV, then you likely have an issue or short circuit on the board somewhere.
-
-### Current Draw Measurements
-
-The revision of MBC3 chip you are using will influence how much current draw you get, and thus how long your battery life will last. For the test set up, I am replacing the battery with a regulated DC power supply set for 3 VDC for consistency, on my regular MBC3 cart board with an MM1134 chip for U4, and brand new AS6C62256 SRAM.
-
-These numbers are for reference only - to help you decide which MBC3 revision to use for your game, if you have a choice. The current required for retaining save data on the multicart will be slightly higher due to the extra components compared to a regular MBC3 cartridge.
-
-| Rev   | P/N      | Current draw (no RTC) | Current draw (with RTC) |
-| ----- | -------- | --------------------- | ----------------------- |
-| MBC3  | P-1      |           ?            |            ?             |
-| MBC3  | LR385364 |          ?             |            ?             |
-| MBC3  | BU3631K  |          ?             |            ?             |
-| MBC3A | LR38536B |          0.1 uA             |            1.5 uA             |
-| MBC3A | BU3632K  |          0.5 uA             |            1.5 uA             |
-| MBC3A | P-2      |          0.5 uA             |            3.9 uA             |
-| MBC3B | BU3634K  |          ?             |             ?            |
-| MBC3B | P-2      |          0.4 uA            |              3.7 uA           |
-
-*If you have one of the revisions of MBC3 chips that either have a question mark in the table, or is missing from the table, please contact me!*
+After you assemble your game, you should measure the current out of the battery. But first, you should program it with the GBxCart, or if you programmed the EEPROM separately, put it into a Game Boy and cycle power once. Then, flip the PCB upside down on a non-conductive surface (not your leg), and set your multimeter in DC millivolts (or volts). Put the positive probe on TP3 and the negative probe on TP2. If you used a 10kΩ for R1, as indicated in the BOM, you should read a voltage in the single or tens of millivolts. If you have something much higher, especially voltages above 20mV, then you likely have an issue or short circuit on the board somewhere.
 
 ## Bill of Materials (BOM)
 
@@ -192,9 +173,8 @@ SW1 can be either short or long. If the button is long enough, it will sit insid
 
 You can use a few parts from the donor cart on the new board to save some money. Note that you will generally get better reliability with new parts as opposed to old ones. For example: I have seen failed RAM chips from donors in the past.
 
-1) **C1, C2, R2, X1: RTC Components** - You can move over these parts if you're using the real-time clock function. Note that C1 and C2 are designated as C2 and C3 on my board. They're the same value, so they're interchangeable.
-2) **U2: MBC5** - This one is required
-3) **U3: SRAM** - You can use this part *only if* the sum of the RAM space for the games you're using is the same or less amount of RAM that the donor cartridge has. If you plan to have separate save data for every game, you'll probably need to buy an AS6C1008.
+1) **U2: MBC5** - This one is required
+2) **U3: SRAM** - You can use this part *only if* the sum of the RAM space for the games you're using is the same or less amount of RAM that the donor cartridge has. If you plan to have separate save data for every game, you'll probably need to buy an AS6C1008.
 
 You could probably transfer over most of the 0.1uF capacitors but they're pretty cheap anyway, so I generally just recommend buying new resistors and capacitors.
 
