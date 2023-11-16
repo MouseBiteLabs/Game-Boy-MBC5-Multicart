@@ -38,9 +38,7 @@ The zipped folder contains all the gerber files for this board. The following op
 - Thickness: 0.8mm
 - Surface Finish: ENIG
 - Gold Fingers: Yes, 30° chamfer
-
-**Add this note to orders:** "The milling.gbr layer indicates where an unplated slot should be added to the board. Please add an unplated slot as indicated."
-
+- 
 **Currently not selling on Etsy, but will in the future. Stay tuned.**
 
 <a href="https://www.etsy.com/shop/MouseBiteLabs"><img src="https://github-production-user-asset-6210df.s3.amazonaws.com/97127539/239718536-5c9aefe3-0628-4434-b8d8-55ff80ac3bbc.png" alt="PCB from Etsy" /></a> 
@@ -67,17 +65,9 @@ And this should go without saying, but if you're assembling these boards with a 
 
 ## Board Configurations
 
-There's a lot to cover here. There are four separate switches to configure, and two different sizes of SRAM to pick from. You also can add a real-time clock to the cartridge for games that needed it.
+There's a lot to cover here. There are four separate switches to configure, and two different sizes of SRAM to pick from.
 
 *Note that you can simply solder bridges from the middle pads of the switches to the left or right to the "ON" or "OFF" positions, instead of installing an actual switch.*
-
-### Real-Time Clock (RTC)
-
-If your game uses an RTC, populate C2, C3, R2, and X1 as indicated in the BOM.
-
-If your game does *not* use the RTC function, you can omit these parts. But you need to bridge the pads of C3.
-
-![image](https://github.com/MouseBiteLabs/Game-Boy-MBC3-Cartridge/assets/97127539/d46ea632-6318-4e5d-bf40-c4e9a7f52aa1)
 
 ### SRAM Size Selection
 
