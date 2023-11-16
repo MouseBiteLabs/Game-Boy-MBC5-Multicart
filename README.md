@@ -38,7 +38,7 @@ The zipped folder contains all the gerber files for this board. The following op
 - Thickness: 0.8mm
 - Surface Finish: ENIG
 - Gold Fingers: Yes, 30° chamfer
-- 
+
 **Currently not selling on Etsy, but will in the future. Stay tuned.**
 
 <a href="https://www.etsy.com/shop/MouseBiteLabs"><img src="https://github-production-user-asset-6210df.s3.amazonaws.com/97127539/239718536-5c9aefe3-0628-4434-b8d8-55ff80ac3bbc.png" alt="PCB from Etsy" /></a> 
