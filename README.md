@@ -17,7 +17,7 @@ Some examples of fun cartridges you can make with this board are:
 - Both Pokemon Red and Blue with *the same* save that can switch between versions *during gameplay without resetting* (hotswap!)
 - A single copy of Powerpuff Girls with two separate save files
 
-[image]
+![image](https://github.com/MouseBiteLabs/Game-Boy-MBC5-Multicart/assets/97127539/75a34d8d-a28f-4cf6-b867-b6cfd8e9bbdb)
 
 All gerbers and source files can be found in this repo, as this project is fully open source. Technical documentation of the board can be found in the Technical folder.
 
