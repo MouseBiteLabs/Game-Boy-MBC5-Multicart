@@ -6,7 +6,7 @@ Please correct me on any information I may have gotten wrong.
 
 ## Schematic
 
-image
+![image](https://github.com/MouseBiteLabs/Game-Boy-MBC5-Multicart/assets/97127539/6548c887-ece1-4dc2-992d-d68d6e4f232a)
 
 ## Multicart Basics
 
