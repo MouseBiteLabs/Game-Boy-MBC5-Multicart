@@ -129,20 +129,20 @@ After you assemble your game, you should measure the current out of the battery.
 
 ## Bill of Materials (BOM)
 
+Note that C11 is absent here. It is not required for operation - do not populate it. It is on the board in case I find it is needed somewhere down the line.
+
 | Reference Designators | Value/Part Number      | Package        | Description        | Source                                           |
 | --------------------- | ---------------------- | -------------- | ------------------ | ------------------------------------------------ |
 | B1                    | CR2032, CR2025, CR2016 | CR2032         | Backup Battery     | [https://mou.sr/3SeAzfT](https://mou.sr/3SeAzfT) |
 | C1                    | 0.1uF                  | 0603           | Capacitor (MLCC)   | [https://mou.sr/3ENc15O](https://mou.sr/3ENc15O) |
-| C2                    | 15 pF                  | 0603           | Capacitor (MLCC)   | [https://mou.sr/3PPorjO](https://mou.sr/3PPorjO) |
-| C3                    | 15 pF                  | 0603           | Capacitor (MLCC)   | [https://mou.sr/3PPorjO](https://mou.sr/3PPorjO) |
 | C4                    | 0.1uF                  | 0603           | Capacitor (MLCC)   | [https://mou.sr/3ENc15O](https://mou.sr/3ENc15O) |
 | C5                    | 0.1uF                  | 0603           | Capacitor (MLCC)   | [https://mou.sr/3ENc15O](https://mou.sr/3ENc15O) |
 | C6                    | 10uF                   | 0603           | Capacitor (MLCC)   | [https://mou.sr/3mZtSkF](https://mou.sr/3mZtSkF) |
 | C7                    | 0.1uF                  | 0603           | Capacitor (MLCC)   | [https://mou.sr/3ENc15O](https://mou.sr/3ENc15O) |
 | C8                    | 0.1uF                  | 0603           | Capacitor (MLCC)   | [https://mou.sr/3ENc15O](https://mou.sr/3ENc15O) |
+| C12                   | 0.1uF                  | 0603           | Capacitor (MLCC)   | [https://mou.sr/3ENc15O](https://mou.sr/3ENc15O) |
 | Q1                    | 2N7002                 | SOT-23         | N-Channel FET      | [https://mou.sr/3rgfh6J](https://mou.sr/3rgfh6J) |
 | R1                    | 10k                    | 0603           | Resistor           | [https://mou.sr/3riR7IH](https://mou.sr/3riR7IH) |
-| R2                    | 330k                   | 0603           | Resistor           | [https://mou.sr/3PZ2pvj](https://mou.sr/3PZ2pvj) |
 | R5                    | 10k                    | 0603           | Resistor           | [https://mou.sr/3riR7IH](https://mou.sr/3riR7IH) |
 | R8                    | 10k                    | 0603           | Resistor           | [https://mou.sr/3riR7IH](https://mou.sr/3riR7IH) |
 | R9                    | 130k                   | 0603           | Resistor           | [https://mou.sr/3MjXliy](https://mou.sr/3MjXliy) |
@@ -151,13 +151,12 @@ After you assemble your game, you should measure the current out of the battery.
 | SW2                   | CAS-D20TA              | J Form Lead    | Dual SPDT          | [https://mou.sr/46gGqF1](https://mou.sr/46gGqF1) |
 | SW3                   | CAS-D20TA              | J Form Lead    | Dual SPDT          | [https://mou.sr/46gGqF1](https://mou.sr/46gGqF1) |
 | U1                    | 29F032, 29F033         | TSOP-40        | Flash EEPROM       | AliExpress or eBay                               |
-| U2                    | MBC5         | QFP-32         | MBC5 Mapper        | Donor MBC5 Game Boy cartridge                    |
+| U2                    | MBC5                   | QFP-32         | MBC5 Mapper        | Donor MBC5 Game Boy cartridge                    |
 | U3                    | AS6C62256, AS6C1008    | SOP-28, SOP-32 | SRAM               | [https://mou.sr/3sFegFF](https://mou.sr/3sFegFF) |
 | U4                    | TPS3613                | MSOP-10        | Battery Management | [https://mou.sr/45Ir2kh](https://mou.sr/45Ir2kh) |
 | U5                    | SN74HCS74              | TSSOP-14       | Dual Flip Flop     | [https://mou.sr/3QYGEuT](https://mou.sr/3QYGEuT) |
 | U6                    | SN74AHC1G08            | SOT-23-5       | 2-input AND Gate   | [https://mou.sr/3Bku2qj](https://mou.sr/3Bku2qj) |
 | U7                    | SN74AHC1G08            | SOT-23-5       | 2-input AND Gate   | [https://mou.sr/3Bku2qj](https://mou.sr/3Bku2qj) |
-| X1                    | 32.768 kHz             | Radial         | Crystal Oscillator | [https://mou.sr/3ZteKuy](https://mou.sr/3ZteKuy) |
 
 ### Note about SW1
 
