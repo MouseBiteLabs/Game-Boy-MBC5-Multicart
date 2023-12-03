@@ -68,7 +68,7 @@ The reason U8 is important is if it's not included and the /MR pin of U4 is conn
 
 ## TPS3613 Master Reset Pin
 
-The TPS3613 is already explained in more detail in the MBC5 technical design document, but one minor difference in implementation here is that the master reset pin (/MR) is connected to SW1 (through U8) when SW2A is set to the OFF position. As mentioned, /MR is pulled up internally in the TPS3613 - and when it's grounded with a press of SW1, the /RESET output is pulled low and the positive RESET output is pulled high. This will reset the MBC3 and the Game Boy via the cart edge /RST pin 30, until you release the button. 
+The TPS3613 is already explained in more detail in the MBC5 technical design document, but one minor difference in implementation here is that the master reset pin (/MR) is connected to SW1 (through U8) when SW2A is set to the OFF position. As mentioned, /MR is pulled up internally in the TPS3613 - and when it's grounded with a press of SW1, the /RESET output is pulled low and the positive RESET output is pulled high. This will reset the MBC5 and the Game Boy via the cart edge /RST pin 30, until you release the button. 
 
 ## Resources
 
