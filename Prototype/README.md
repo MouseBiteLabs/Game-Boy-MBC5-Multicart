@@ -1,6 +1,11 @@
 # Prototype Board Information
 
-Only follow this if you have a v1.1 board!!
+Only follow this if you have a v1.0 or v1.1 board!!
+
+## Fix to v1.0
+
+- Lift pin 31 on the SRAM if you're using a 1 Mbit SRAM (AS6C1008) so that it does not connect to the circuit board. Wire this lifted pin to pin 4 of U6.
+- For SW2A (the top switch), if you want it to be in the "ON" position, you must manually wire the middle pad to pin 4 and 5 of U4 - this means you have to remove the switch. You'll need to manually solder the SW2B as well if the switch is removed.
 
 ## Board Configurations
 
