@@ -47,7 +47,7 @@ You can use the zipped folder at any board fabricator you like. You may also buy
 
 [link]
 
-<a href="">The board is also listed on OSH Park as well.</a> **Be sure to get them in 0.8mm thickness if you order from here.**
+<a href="https://oshpark.com/shared_projects/wNA8tQph">The board is also listed on OSH Park as well.</a> **Be sure to get them in 0.8mm thickness if you order from here.**
 
 ## Required Equipment
 
@@ -80,14 +80,14 @@ There are two sizes of SRAM you can use, and the type you use will dictate how y
 
 SW2, split into two separate switches SW2A (top half) and SW2B (bottom half), controls how you change games on the cartridge. The following table describes the different settings:
 
-| Mode | SW2A (Top) | SW2B (Bottom) | Game Change Method | Resets the Console? |
-| ---- | ---------- | ------------- | ------------------ | ------------------- |
-| 1    | OFF        | ON            | Cycle power        | Yes                 |
-| 2    | ON         | ON            | Press button       | Yes                 |
-| 3    | OFF        | OFF           | Press button       | No                  |
-| 4    | ON         | OFF           | No change          | Yes                 |
+| Mode | SW2A (Top) | SW2B (Bottom) | Game change with reset? | Game change with button press? | Does the button reset? |
+| ---- | ---------- | ------------- | ----------------------- | ------------------------------ | ---------------------- |
+| 1    | OFF        | OFF           | No                      | Yes                            | Yes                    |
+| 2    | OFF        | ON            | Yes                     | Yes                            | Yes                    |
+| 3    | ON         | OFF           | No                      | Yes                            | No                     |
+| 4    | ON         | ON            | Yes                     | No                             | No                     |
 
-*Note: Mode 4 will effectively act as a single-game cartridge with an added reset button. This mode does not require populating SW1, U5, and U7. But it requires you to place SW3 into mode C, and restricts your game size to 2 MB and RAM size to 256 Kbit.*
+*Note: Mode 4 is essentially Mode 2, but without button functionality.*
 
 ### Game and Save Data Configuration Switch (SW3)
 
@@ -105,9 +105,9 @@ SW3, split into two separate switches SW3A (bottom half) and SW3B (top half), co
 ### Game Mode Examples
 
 Here's a list of example cartridges you can make with these settings:
-1) Pokemon Red, Blue, Yellow, and Green on one cartridge with separate save files that changes via powering the Game Boy off and on again: **Mode 1B** with 1 Mbit SRAM
-2) Pokemon Red and Blue with the same save file that hotswaps when you press the button on the cartridge (changing games during gameplay): **Mode 3C** with 256 Kbit SRAM
-3) Pokemon Yellow with a reset button: **Mode 4C** with 256 Kbit SRAM
+1) Pokemon Red, Blue, Yellow, and Green on one cartridge with separate save files that changes only via pressing the button, which also resets the game: **Mode 1B** with 1 Mbit SRAM
+2) Pokemon Red and Blue with separate save files that changes by pressing the button *or* cycling power on the Game Boy: **Mode 2C** with 1 Mbit SRAM
+3) Pokemon Red and Blue with the same save file that hotswaps when you press the button on the cartridge (changing games during gameplay): **Mode 3C** with 256 Kbit SRAM
 
 ## How to Program Games
 
@@ -135,13 +135,13 @@ Batteries that are as large as CR2032 will fit inside the shell, *however*, due 
 
 <a href="https://github.com/MouseBiteLabs/Game-Boy-MBC5-Cartridge/tree/main/Technical#estimating-battery-life">See this section in my main MBC5 repository for estimating battery life here.</a>
 
-## Bill of Materials (BOM)
+I haven't tested it, but I believe using battery holders instead of pre-tabbed batteries will similarly cause issues with trying to press the button in the middle of the cartridge.
 
-Note that C11 is absent here. It is not required for operation - do not populate it. It is on the board in case I find it is needed somewhere down the line.
+## Bill of Materials (BOM)
 
 | Reference Designators | Value/Part Number      | Package        | Description        | Source                                           |
 | --------------------- | ---------------------- | -------------- | ------------------ | ------------------------------------------------ |
-| B1                    | CR2032, CR2025, CR2016 | CR2032         | Backup Battery     | [https://mou.sr/3SeAzfT](https://mou.sr/3SeAzfT) |
+| B1                    | CR2025, CR2016         | CR2025         | Backup Battery     | [https://mou.sr/3SeAzfT](https://mou.sr/3SeAzfT) |
 | C1                    | 0.1uF                  | 0603           | Capacitor (MLCC)   | [https://mou.sr/3ENc15O](https://mou.sr/3ENc15O) |
 | C4                    | 0.1uF                  | 0603           | Capacitor (MLCC)   | [https://mou.sr/3ENc15O](https://mou.sr/3ENc15O) |
 | C5                    | 0.1uF                  | 0603           | Capacitor (MLCC)   | [https://mou.sr/3ENc15O](https://mou.sr/3ENc15O) |
@@ -163,8 +163,9 @@ Note that C11 is absent here. It is not required for operation - do not populate
 | U3                    | AS6C62256, AS6C1008    | SOP-28, SOP-32 | SRAM               | [https://mou.sr/3sFegFF](https://mou.sr/3sFegFF) |
 | U4                    | TPS3613                | MSOP-10        | Battery Management | [https://mou.sr/45Ir2kh](https://mou.sr/45Ir2kh) |
 | U5                    | SN74HCS74              | TSSOP-14       | Dual Flip Flop     | [https://mou.sr/3QYGEuT](https://mou.sr/3QYGEuT) |
-| U6                    | SN74AHC1G08            | SOT-23-5       | 2-input AND Gate   | [https://mou.sr/3Bku2qj](https://mou.sr/3Bku2qj) |
-| U7                    | SN74AHC1G08            | SOT-23-5       | 2-input AND Gate   | [https://mou.sr/3Bku2qj](https://mou.sr/3Bku2qj) |
+| U6                    | SN74AHC1G126           | SC70           | Tri-State Buffer   | [https://mou.sr/3T9Zdim](https://mou.sr/3T9Zdim) |
+| U7                    | SN74AHC1G126           | SC70           | Tri-State Buffer   | [https://mou.sr/3T9Zdim](https://mou.sr/3T9Zdim) |
+| U8                    | SN74AHC1G126           | SC70           | Tri-State Buffer   | [https://mou.sr/3T9Zdim](https://mou.sr/3T9Zdim) |
 
 ### Note about SW1
 
@@ -194,6 +195,9 @@ You could probably transfer over most of the 0.1uF capacitors but they're pretty
 
 ## Revision History
 
+### v1.2
+- Added nubs on the board edge to prevent the circuit board from rattling around in aftermarket cartridges
+
 ### v1.1
 - Fix schematic errors
 - Extended cart edge down by 0.25 mm for better fitment
@@ -211,6 +215,7 @@ You could probably transfer over most of the 0.1uF capacitors but they're pretty
 - <a href="https://github.com/lesserkuma/FlashGBX">Lesserkuma's FlashGBX software</a>
 - <a href="https://www.ti.com/lit/ds/symlink/tps3613-01.pdf?HQS=dis-mous-null-mousermode-dsf-pf-null-wwe&ts=1698238885366&ref_url=https%253A%252F%252Feu.mouser.com%252F">TPS3613 Datasheet</a>
 - Board outline modified from <a href="https://tinkerer.us/projects/homebrew-gameboy-cartridge.html">Dillon Nichols's Homebrew Gameboy Cartridge project</a>
+- Thanks to <a href="https://github.com/orangeglo">orangeglo</a> for his suggestion of adding spacers around the board edge for better fitment in aftermarket cartridges
 - Some components from <a href="https://github.com/adafruit/Adafruit-Eagle-Library">Adafruit's Eagle parts library</a>
 - Some components from <a href="https://www.snapeda.com/">SnapMagic</a>
 - Thank you to <a href="https://github.com/Gekkio">gekkio</a> for their deep Game Boy knowledge resources, and for collaboration in demystifying some of the design choices on Game Boy cartridges
