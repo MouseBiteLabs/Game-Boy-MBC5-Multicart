@@ -56,15 +56,19 @@ What's really beneficial here is the "Supports Slow Inputs" column. The /RESET s
 
 In order to keep the state of the flip-flop persistent across resets/power cycles, so it "remembers" which game you were playing before toggling the clock pin, it must be operational on battery power via the battery management IC, TPS3613. This is somewhat unfortunate - the more devices you run on battery power, the shorter battery life will become. Luckily, the SN74HCS74 has a typical supply current requirement of 0.1 uA (max of 2 uA).
 
-## The AND Gates
+## Tri-State Buffers
 
-U6 and U7 are two-input AND gates. The outputs of these AND gates will follow the two output bits of the dual flip-flop, as long as /RESGATE is high. /RESGATE is connected to the battery management IC's /RESET output, which is high as long as voltage is on the VCC net (when the Game Boy is powered on). The reason this is important is the EEPROM is powered by VCC, and *not* by the battery. If we connected the outputs of the flip-flops directly to the address pins, because the dual flip-flop is powered on battery, the states of the address pins could feasibly be at 3 V. The EEPROM's datasheet specifies the voltage on the input pins be no larger than 0.5 V above VCC. Since the VCC pin will be 0 V, we'd be violating the datasheet requirements and potentially damaging the chip.
+U6, U7, and U8 are what's known as tri-state buffers. The output pin Y will be whatever the input pin A is, as long as the OE pin is pulled HIGH. When the OE pin is LOW, then the output of Y is high impedance, or "floating" - not HIGH *or* LOW. U6's and U7's OE pins are connected to /RESGATE, which is HIGH whenever power is supplied to the cartridge from the Game Boy (i.e. when the game is not running on battery power) and LOW whenever the Game Boy is off. U8's OE pin is tied directly to VCC, the cartridge input voltage.
 
-The SN74AHC1G08 AND gates that have been chosen *can* handle a voltage on their input pins if VCC is 0 V. There is a small leakage current through the input pins if either or both of the flip-flop outputs are high, however it's only 0.1 uA *max* at ambient temperature, so again a negligible impact.
+The reason the U6 and U7 buffers are important is the EEPROM is powered by VCC, and *not* by the battery. If we connected the outputs of the flip-flops directly to the address pins, because the dual flip-flop is powered on battery, the states of the address pins could feasibly be at 3 V. The EEPROM's datasheet specifies the voltage on the input pins be no larger than 0.5 V above VCC. Since the VCC pin will be 0 V, we'd be violating the datasheet requirements and potentially damaging the chip.
+
+The buffers that have been chosen *can* handle a voltage on their input pins if VCC is 0 V. There is a small leakage current through the input pins if either or both of the flip-flop outputs are high, however it's only 0.1 uA *max* at ambient temperature, so again a negligible impact.
+
+The reason U8 is important is if it's not included and the /MR pin of U4 is connected directly to the button, then the RC circuit on the button would discharge the battery through the /MR pin, which is internally pulled up to VCC.
 
 ## TPS3613 Master Reset Pin
 
-The TPS3613 is already explained in more detail in the MBC5 technical design document, but one minor difference in implementation here is that the master reset pin (/MR) is connected to SW1 when SW2A is set to the ON position. /MR is pulled up internally in the TPS3613 - when it's grounded with a press of SW1, the /RESET output is pulled low and the positive RESET output is pulled high. This will reset the MBC3 and the Game Boy via the cart edge /RST pin 30, until you release the button. 
+The TPS3613 is already explained in more detail in the MBC5 technical design document, but one minor difference in implementation here is that the master reset pin (/MR) is connected to SW1 (through U8) when SW2A is set to the OFF position. As mentioned, /MR is pulled up internally in the TPS3613 - and when it's grounded with a press of SW1, the /RESET output is pulled low and the positive RESET output is pulled high. This will reset the MBC3 and the Game Boy via the cart edge /RST pin 30, until you release the button. 
 
 ## Resources
 
