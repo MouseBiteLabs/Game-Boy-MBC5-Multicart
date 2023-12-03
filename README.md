@@ -1,4 +1,4 @@
-# Game Boy MBC5 Multicart
+# Game Boy MBC5 Multicart - Under Construction
 
 This is my design of a flashable MBC5-based multicart for the Game Boy. You can make a 2-in-1 or 4-in-1 cartridge, that changes games based on a button press or power cycling the Game Boy. With this board you can also make a single game, but with the addition of a pressable reset button on the cartridge.
 
@@ -17,7 +17,7 @@ Some examples of fun cartridges you can make with this board are:
 - Both Pokemon Red and Blue with *the same* save that can switch between versions *during gameplay without resetting* (hotswap!)
 - A single copy of Powerpuff Girls with two separate save files
 
-![image](https://github.com/MouseBiteLabs/Game-Boy-MBC5-Multicart/assets/97127539/75a34d8d-a28f-4cf6-b867-b6cfd8e9bbdb)
+![image](https://github.com/MouseBiteLabs/Game-Boy-MBC5-Multicart/assets/97127539/4bdb1b3b-8d5a-45d1-9b10-1cb02618093a)
 
 All gerbers and source files can be found in this repo, as this project is fully open source. Technical documentation of the board can be found in the Technical folder.
 
