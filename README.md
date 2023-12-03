@@ -125,7 +125,15 @@ On the back of the board are five test points. Here's where they are connected:
 - TP4: Ground
 - TP5: VCC input voltage
 
-After you assemble your game, you should measure the current out of the battery. But first, you should program it with the GBxCart, or if you programmed the EEPROM separately, put it into a Game Boy and cycle power once. Then, flip the PCB upside down on a non-conductive surface (not your leg), and set your multimeter in DC millivolts (or volts). Put the positive probe on TP3 and the negative probe on TP2. If you used a 10kΩ for R1, as indicated in the BOM, you should read a voltage in the single or tens of millivolts. If you have something much higher, especially voltages above 20mV, then you likely have an issue or short circuit on the board somewhere.
+After you assemble your game, you should measure the current out of the battery. But first, you should program it with the GBxCart, or if you programmed the EEPROM separately, put it into a Game Boy and cycle power once. Then, flip the PCB upside down on a non-conductive surface (not your leg), and set your multimeter in DC millivolts (or volts). Put the positive probe on TP3 and the negative probe on TP2. If you used a 10kΩ for R1, as indicated in the BOM, you should read a voltage in the single or tens of millivolts. If you have something much higher, especially voltages above 100mV, then you likely have an issue or short circuit on the board somewhere.
+
+### Battery Size Considerations
+
+The coin cells commonly used on Game Boy carts in order of increasing size are CR2016, CR2025, and CR2032. The CR2032 is the thickest, but yields the longest battery life.
+
+Batteries that are as large as CR2032 will fit inside the shell, *however*, due to the thickness of the CR2032, using one makes it so the shell cannot be pressed down very easily. This makes the button inside the shell difficult to press reliably. For this reason, I recommend using a CR2025 in builds. The battery life should easily last more than 10 years. But if you want to use a CR2032, you should only expect to make a cart that changes games via power cycling only.
+
+<a href="https://github.com/MouseBiteLabs/Game-Boy-MBC5-Cartridge/tree/main/Technical#estimating-battery-life">See this section in my main MBC5 repository for estimating battery life here.</a>
 
 ## Bill of Materials (BOM)
 
