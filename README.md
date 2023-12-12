@@ -141,6 +141,19 @@ Batteries that are as large as CR2032 will fit inside the shell, *however*, due 
 
 I haven't tested it, but I believe using battery holders instead of pre-tabbed batteries will similarly cause issues with trying to press the button in the middle of the cartridge.
 
+### Why not FRAM?
+
+This board is only suitable for using SRAM. One downside to SRAM, if you haven't figured it out yet, is that you need a battery to keep the SRAM powered on even when the game is turned off. So eventually the battery will die, and your save data is lost. Some people have used FRAM, or Ferroelectric RAM, to keep save data around even after the battery dies (specifically, the popular part that's used for FRAM carts is the FM18W08). But, using this FRAM chip has a handful of downsides, and the benefit of keeping save data after the battery dies *in my opinion* does not outweigh the cons, which are as follows:
+
+1) Quality, new stock, 5V tolerant FRAM is expensive ($12+ per part).
+2) Cheaper FRAM chips from eBay or Aliexpress are notoriously flaky (anecdotally, ~50% success rate).
+3) FM18W08 maxes out at 256K (which is restrictive for multicarts).
+4) FRAM memory access requires different chip select timing than SRAM, and the Game Boy expects SRAM, so it is not natively compatible with FRAM carts. The Gameboy Color specifically cannot (easily) be made to properly access FM18W08 chip. You *can* use an OR gate and add the CLK on the cart edge to try to achieve the necessary timing, but it only works (properly) for DMG/MGB/SGB, not the GBC. It usually *works* in practice for GBC, but it's technically a datasheet violation and can potentially cause issues in edge cases. <a href="https://github.com/Gekkio">(Thanks to gekkio for pointing this out!)</a>
+
+Brand new SRAM chips are ~$3, and having the SRAM footprint also allows you to use SRAM from an original cart if desired. You will *easily* get more than a decade of life running on a battery. You're already assembling this cartridge; you can dump the save and replace the battery before then!
+
+Note that this isn't to throw shade at any FRAM-based carts, but for me personally, it's more trouble than it's worth.
+
 ## Bill of Materials (BOM)
 
 | Reference Designators | Value/Part Number      | Package        | Description        | Source                                           |
