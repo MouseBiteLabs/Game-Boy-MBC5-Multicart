@@ -93,6 +93,8 @@ SW2, split into two separate switches SW2A (top half) and SW2B (bottom half), co
 
 SW3, split into two separate switches SW3A (bottom half) and SW3B (top half), controls the order in which the ROM banks (the games) and the RAM banks (the save data) cycle. This table assumes you are using a 1 Mbit SRAM chip, as a 256 Kbit SRAM will share save data across all ROMs.
 
+Please note that SW3A and SW3B are *different* than the SW3A and SW3B on the MBC3 Multicart PCB.
+
 | Mode | SW3A | SW3B | ROM Banks  | RAM Banks   | Game 1     | Game 2     | Game 3     | Game 4     |
 | ---- | ---- | ---- | ---------- | ----------- | ---------- | ---------- | ---------- | ---------- |
 | A    | ON   | OFF  | 2x 2 MB    | 4x 256 Kbit | ROM1, RAM1 | ROM1, RAM2 | ROM2, RAM3 | ROM2, RAM4 |
