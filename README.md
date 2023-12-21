@@ -83,8 +83,8 @@ SW2, split into two separate switches SW2A (top half) and SW2B (bottom half), co
 | Mode | SW2A (Top) | SW2B (Bottom) | Game change with reset? | Game change with button press? | Does the button reset? |
 | ---- | ---------- | ------------- | ----------------------- | ------------------------------ | ---------------------- |
 | 1    | OFF        | OFF           | No                      | Yes                            | Yes                    |
-| 2    | OFF        | ON            | Yes                     | Yes                            | Yes                    |
-| 3    | ON         | OFF           | No                      | Yes                            | No                     |
+| 2    | OFF        | ON            | No                      | Yes                            | No                     |
+| 3    | ON         | OFF           | Yes                     | Yes                            | Yes                    |
 | 4    | ON         | ON            | Yes                     | No                             | No                     |
 
 *Note: Mode 4 is essentially Mode 2, but without button functionality.*
@@ -212,6 +212,10 @@ You could probably transfer over most of the 0.1uF capacitors but they're pretty
 - Generally, ROM sizes are conveyed in terms of kilobytes (KB) and megabytes (KB, MB). RAM size is usually conveyed in terms of kilobits or megabits (Kbit, Mbit). You can convert Kbit and Mbit to KB and MB by dividing Kbit or Mbit by 8. For example, 256 Kbit = 32 KB.
 
 ## Revision History
+
+### v1.3
+- Fixed debounce circuit for push button
+- Adjusted board edge tabs to better fit in shells
 
 ### v1.2
 - Added nubs on the board edge to prevent the circuit board from rattling around in aftermarket cartridges
