@@ -106,8 +106,8 @@ SW3, split into two separate switches SW3A (bottom half) and SW3B (top half), co
 
 Here's a list of example cartridges you can make with these settings:
 1) Pokemon Red, Blue, Yellow, and Green on one cartridge with separate save files that changes only via pressing the button, which also resets the game: **Mode 1B** with 1 Mbit SRAM
-2) Pokemon Red and Blue with separate save files that changes by pressing the button *or* cycling power on the Game Boy: **Mode 2C** with 1 Mbit SRAM
-3) Pokemon Red and Blue with the same save file that hotswaps when you press the button on the cartridge (changing games during gameplay): **Mode 3C** with 256 Kbit SRAM
+2) Pokemon Red and Blue with separate save files that changes by pressing the button *or* cycling power on the Game Boy: **Mode 3C** with 1 Mbit SRAM
+3) Pokemon Red and Blue with the same save file that hotswaps when you press the button on the cartridge (changing games during gameplay): **Mode 2C** with 256 Kbit SRAM
 
 ## How to Program Games
 
