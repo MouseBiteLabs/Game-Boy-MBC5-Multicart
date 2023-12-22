@@ -156,6 +156,10 @@ Brand new SRAM chips are ~$3, and having the SRAM footprint also allows you to u
 
 Note that this isn't to throw shade at any FRAM-based carts, but for me personally, it's more trouble than it's worth.
 
+## Trimming the Circuit Board Tabs
+
+The six tabs on the edges of the boards are included to center the PCB in certain aftermarket shells that don't fit OEM-sized circuit boards nicely. If you run into any shells where the tabs cause fitment issues (Kitsch-Bent shells are a bit tight from my testing), you can safely trim off the tabs without affecting performance. There is no copper in the tabs, it is only the FR-4 circuit board material, so you can use a file or flush cutters to trim these tabs back.
+
 ## Bill of Materials (BOM)
 
 | Reference Designators | Value/Part Number      | Package        | Description        | Source                                           |
