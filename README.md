@@ -158,9 +158,13 @@ Brand new SRAM chips are ~$3, and having the SRAM footprint also allows you to u
 
 Note that this isn't to throw shade at any FRAM-based carts, but for me personally, it's more trouble than it's worth.
 
-## Trimming the Circuit Board Tabs
+## Board Fitment
 
-The six tabs on the edges of the boards are included to center the PCB in certain aftermarket shells that don't fit OEM-sized circuit boards nicely. If you run into any shells where the tabs cause fitment issues (Kitsch-Bent shells are a bit tight from my testing), you can safely trim off the tabs without affecting performance. There is no copper in the tabs, it is only the FR-4 circuit board material, so you can use a file or flush cutters to trim these tabs back.
+The shape of this board was originally meant to mimic original Game Boy circuit boards as closely as possible (v1.1 and earlier). Unfortunately, when placed in some aftermarket Game Boy cartridge shells (like those from Cloud Game Store), the circuit board has a lot of freedom to rotate around the main screw hole in the bottom-middle of the cartridge. This can cause misalignment when you put it in a Game Boy, which can cause a game to either not load properly (garbled Game Boy logo) or shut off the Game Boy because of a short circuit. This isn't *dangerous* or anything, just annoying.
+
+In order to make the boards fit nicer in any kind of shell, for v1.4 I added extended tabs of circuit board material to the edges of the cartridges to keep it from rotating too much in shells, which was suggested to me by <a href="https://github.com/orangeglo">orangeglo</a>! (Thanks!)
+
+If you're having trouble fitting the circuit board into a shell, because the tabs interfere with the cart edges, you can safely sand or trim them down as there is no copper within the tabs themselves. The only shell that appears to require any kind of trimming are Kitsch-Bent shells.
 
 ## Bill of Materials (BOM)
 
