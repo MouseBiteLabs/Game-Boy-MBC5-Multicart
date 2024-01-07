@@ -82,7 +82,7 @@ There are two sizes of SRAM you can use, and the type you use will dictate how y
 
 SW2, split into two separate switches SW2A (top half) and SW2B (bottom half), controls how you change games on the cartridge. The following table describes the different settings:
 
-| Mode | SW2A (Top) | SW2B (Bottom) | Game change with reset? | Game change with button press? | Does the button reset? |
+| Mode | SW2A (Bottom) | SW2B (Top) | Game change with reset? | Game change with button press? | Does the button reset? |
 | ---- | ---------- | ------------- | ----------------------- | ------------------------------ | ---------------------- |
 | 1    | OFF        | OFF           | No                      | Yes                            | Yes                    |
 | 2    | OFF        | ON            | No                      | Yes                            | No                     |
@@ -97,7 +97,7 @@ SW3, split into two separate switches SW3A (bottom half) and SW3B (top half), co
 
 Please note that SW3A and SW3B are *different* than the SW3A and SW3B on the MBC3 Multicart PCB.
 
-| Mode | SW3A | SW3B | ROM Banks  | RAM Banks   | Game 1     | Game 2     | Game 3     | Game 4     |
+| Mode | SW3A (Top) | SW3B (Bottom) | ROM Banks  | RAM Banks   | Game 1     | Game 2     | Game 3     | Game 4     |
 | ---- | ---- | ---- | ---------- | ----------- | ---------- | ---------- | ---------- | ---------- |
 | A    | ON   | OFF  | 2x 2 MB    | 4x 256 Kbit | ROM1, RAM1 | ROM1, RAM2 | ROM2, RAM3 | ROM2, RAM4 |
 | B    | OFF  | OFF  | 4x 1 MB    | 4x 256 Kbit | ROM1, RAM1 | ROM2, RAM2 | ROM3, RAM3 | ROM4, RAM4 |
