@@ -207,6 +207,12 @@ SW1 can be either short or long. If the button is long enough, it will sit insid
 
 - If you don't care about pressing the button while it's in the shell, like if you are making a multicart that changes games by cycling the power where you wouldn't need it, then you can simply use the TS18-5-25-SL-260-SMT-TR (https://mou.sr/3uipCQz).
 
+### Note about SW2, SW3
+
+Instead of using the somewhat pricey switch designated for SW2 and SW3, you can instead just bridge the pads with solder from the middle pad to the pad in the direction you want to set the switch to. For example - in the below picture, SW3A and SW3B are both in the "ON" position in both cases. (Note that the white switches on the right image are switched to the right.)
+
+![image](https://github.com/MouseBiteLabs/Game-Boy-MBC5-Multicart/assets/97127539/40d1f523-6df1-4596-8ef3-968f2b9fd656)
+
 ### Usable Donor Cartridge Parts
 
 You can use a few parts from the donor cart on the new board to save some money. Note that you will generally get better reliability with new parts as opposed to old ones. For example: I have seen failed RAM chips from donors in the past.
