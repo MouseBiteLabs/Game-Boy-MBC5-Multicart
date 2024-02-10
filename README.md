@@ -229,6 +229,12 @@ You could probably transfer over most of the 0.1uF capacitors but they're pretty
   - For untabbed coin cells, you can find battery retainer adapters online, <a href="https://retrogamerepairshop.com/products/hdr-game-boy-game-battery-retainer?variant=40511013290156">like this one.</a> However, similar to using a CR2032, this will probably prevent easy pressing of the button in the middle of the cart, if added.
 - Generally, ROM sizes are conveyed in terms of kilobytes and megabytes (KB, MB). RAM size is usually conveyed in terms of kilobits or megabits (Kbit, Mbit). You can convert Kbit and Mbit to KB and MB by dividing Kbit or Mbit by 8. For example, 256 Kbit = 32 KB.
 
+## Labels
+
+If you want a Bucket Mouse branded label for your cartridge, look no further than <a href="https://krizdingus.com/mousebitelabs/">krizdingus's designs</a>. Special thanks to Kris for designing these, they look awesome! (If you are going to order/print these, use the high-res images hosted on his website, and *keep the labels for personal or non-commercial use only.*)
+
+![image](https://github.com/MouseBiteLabs/Game-Boy-MBC5-Multicart/assets/97127539/3a4cd3d5-f683-40e3-acfb-1b8c549bb1bb)
+
 ## Revision History
 
 ### v1.3
