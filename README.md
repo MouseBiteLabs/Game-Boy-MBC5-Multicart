@@ -169,6 +169,8 @@ If you're having trouble fitting the circuit board into a shell, because the tab
 
 ## Bill of Materials (BOM)
 
+*Please note that there was an error in the published BOM before February 24, 2024. If you assembled your board before that date, I recommend you replace R5, R6, and C8 to their new values listed below.*
+
 | Reference Designators | Value/Part Number      | Package        | Description        | Source                                           |
 | --------------------- | ---------------------- | -------------- | ------------------ | ------------------------------------------------ |
 | B1                    | CR2025, CR2016, CR2032*| See note above | Backup Battery     | [https://mou.sr/3PLccol](https://mou.sr/3PLccol) |
