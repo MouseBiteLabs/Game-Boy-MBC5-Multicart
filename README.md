@@ -23,6 +23,12 @@ Some examples of fun cartridges you can make with this board are:
 
 All gerbers and source files can be found in this repo, as this project is fully open source. Technical documentation of the board can be found in the Technical folder.
 
+## Tutorial Video
+
+This is a video tutorial for the MBC3 multicart specifically, but the process is nearly identical.
+
+[![Multicart Video Tutorial](http://img.youtube.com/vi/DJ7rJUZhDuM/maxresdefault.jpg)](http://www.youtube.com/watch?v=DJ7rJUZhDuM "Game Boy Multicart Tutorial (Pokemon Gold and Silver)")
+
 ## Important Things Before You Start
 
 1) To use this board, you need to have an original Game Boy game that uses an MBC5 mapper chip. <a href="https://catskull.net/gb-rom-database/">You can find a list of games and their mappers here</a>. Use the search function.
