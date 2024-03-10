@@ -92,9 +92,11 @@ SW2, split into two separate switches SW2A (top half) and SW2B (bottom half), co
 
 *Note: Mode 4 does not give function to the push button at all.*
 
+The "game change" method in this table describes how you advance down the "game" columns described in the table for SW3.
+
 ### Game and Save Data Configuration Switch (SW3)
 
-SW3, split into two separate switches SW3A (bottom half) and SW3B (top half), controls the order in which the ROM banks (the games) and the RAM banks (the save data) cycle. This table assumes you are using a 1 Mbit SRAM chip, as a 256 Kbit SRAM will share save data across all ROMs.
+SW3, split into two separate switches SW3A (bottom half) and SW3B (top half), controls the order in which the ROM banks (the games) and the RAM banks (the save data) cycle. This table assumes you are using a 1 Mbit SRAM chip. If you are using a 256 Kbit SRAM, then every entry in the "RAM Banks" column can be described as "1x 256 Kbit", and all the "Game" columns will share that single RAM bank.
 
 Please note that SW3A and SW3B are *different* than the SW3A and SW3B on the MBC3 Multicart PCB.
 
