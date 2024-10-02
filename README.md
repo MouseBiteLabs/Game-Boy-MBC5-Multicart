@@ -228,7 +228,7 @@ Instead of using the somewhat pricey switch designated for SW2 and SW3, you can 
 
 You can use a few parts from the donor cart on the new board to save some money. Note that you will generally get better reliability with new parts as opposed to old ones. For example: I have seen failed RAM chips from donors in the past.
 
-1) **U2: MBC5** - This one is required
+1) **U2: MBC5** - This one is required [List of game compatible MBC5 to harvest](https://gbhwdb.gekkio.fi/cartridges/mbc5.html) or [this website by title of game name](https://catskull.net/gb-rom-database/)
 2) **U3: SRAM** - You can use this part *only if* the sum of the RAM space for the games you're using is the same or less amount of RAM that the donor cartridge has. If you plan to have separate save data for every game, you'll probably need to buy an AS6C1008.
 
 You could probably transfer over most of the 0.1uF capacitors but they're pretty cheap anyway, so I generally just recommend buying new resistors and capacitors.
