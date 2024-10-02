@@ -5,7 +5,7 @@ This is my design of a flashable MBC5-based multicart for the Game Boy. You can 
 The features are as follows:
 
 - Able to make a cartridge with either 2x 2 MB games or 4x 1 MB games
-- Optionally adds a pressable button to the cartridge (no shell cutting required)
+- Adds a pressable button to the cartridge (no shell cutting required)
   - The button can be configured to cycle games on the cart, reset the console, or both
 - Configurable to have separate save data for each game, or to share the same save data across multiple games
 - Fully compatible with the <a href="https://www.gbxcart.com/">GBxCart RW</a> so you can transfer games and save files to and from the board
@@ -30,6 +30,8 @@ This is a video tutorial for the MBC3 multicart specifically, but the process is
 [![Multicart Video Tutorial](http://img.youtube.com/vi/DJ7rJUZhDuM/maxresdefault.jpg)](http://www.youtube.com/watch?v=DJ7rJUZhDuM "Game Boy Multicart Tutorial (Pokemon Gold and Silver)")
 
 ## Important Things Before You Start
+
+The most important thing to note is that SW2A MUST be in the OFF position. The board is still fully functional as long as you rely on the button inside the cartridge to switch games. **You cannot cycle games by turning the power on and off.** Details are below.
 
 1) To use this board, you need to have an original Game Boy game that uses an MBC5 mapper chip. <a href="https://catskull.net/gb-rom-database/">You can find a list of games and their mappers here</a>. Use the search function. Please note the RAM is in bytes, not bits. Since SRAM in this repo is defined in bits, you need to convert by multiplying the number of bytes by 8.
 2) You will need to remove the MBC5 from your donor cartridge for use on this board. This will require a hot air rework station or a hot plate. There's a list below of other parts you can re-use from the donor cartridge.
@@ -89,14 +91,14 @@ There are two sizes of SRAM you can use, and the type you use will dictate how y
 
 SW2, split into two separate switches SW2A (top half) and SW2B (bottom half), controls how you change games on the cartridge. The following table describes the different settings:
 
+**DUE TO AN OVERLOOKED DATASHEET ERROR, SW2A *MUST* BE TURNED OFF. DO NOT USE IT IN THE "ON" POSITION.**
+
 | Mode | SW2A (Bottom) | SW2B (Top) | Game change with reset? | Game change with button press? | Does the button reset? |
 | ---- | ---------- | ------------- | ----------------------- | ------------------------------ | ---------------------- |
 | 1    | OFF        | OFF           | No                      | Yes                            | Yes                    |
 | 2    | OFF        | ON            | No                      | Yes                            | No                     |
-| 3    | ON         | OFF           | Yes                     | Yes                            | Yes                    |
-| 4    | ON         | ON            | Yes                     | No                             | No                     |
-
-*Note: Mode 4 does not give function to the push button at all.*
+|~~3~~ | ~~ON~~     | ~~OFF~~       | ~~Yes~~                 | ~~Yes~~                        | ~~Yes~~                |
+|~~4~~ | ~~ON~~     | ~~ON~~        | ~~Yes~~                 | ~~No~~                         | ~~No~~                 |
 
 The "game change" method in this table describes how you advance down the "game" columns described in the table for SW3.
 
@@ -148,7 +150,7 @@ To estimate battery life, see <a href="https://github.com/MouseBiteLabs/Game-Boy
 
 The coin cells commonly used on Game Boy carts in order of increasing size are CR2016, CR2025, and CR2032. The CR2032 is the thickest, but yields the longest battery life.
 
-Batteries that are as large as CR2032 will fit inside the shell, *however*, due to the thickness of the CR2032, using one makes it so the shell cannot be pressed down very easily. This makes the button inside the shell difficult to press reliably. For this reason, I recommend using a CR2025 in builds. The battery life should easily last more than 10 years. But if you want to use a CR2032, you should only expect to make a cart that changes games via power cycling only.
+Batteries that are as large as CR2032 will fit inside the shell, *however*, due to the thickness of the CR2032, using one makes it so the shell cannot be pressed down very easily. This makes the button inside the shell difficult to press reliably. For this reason, I recommend using the CR2025.
 
 <a href="https://github.com/MouseBiteLabs/Game-Boy-MBC5-Cartridge/tree/main/Technical#estimating-battery-life">See this section in my main MBC5 repository for estimating battery life here.</a>
 
@@ -196,7 +198,7 @@ If you're having trouble fitting the circuit board into a shell, because the tab
 | R8                    | 10k                    | 0603           | Resistor           | [https://mou.sr/3riR7IH](https://mou.sr/3riR7IH) |
 | R9                    | 130k                   | 0603           | Resistor           | [https://mou.sr/3MjXliy](https://mou.sr/3MjXliy) |
 | R10                   | 49.9k                  | 0603           | Resistor           | [https://mou.sr/3Q3NRZO](https://mou.sr/3Q3NRZO) |
-| SW1                   | See note               | 5.2 x 5.2mm    | Tactile Switch     | [https://mou.sr/3uipCQz](https://mou.sr/3uipCQz) OR see note |
+| SW1                   | See note               | 5.2 x 5.2mm    | Tactile Switch     | See Note |
 | SW2                   | CAS-D20TA              | J Form Lead    | Dual SPDT          | [https://mou.sr/46gGqF1](https://mou.sr/46gGqF1) |
 | SW3                   | CAS-D20TA              | J Form Lead    | Dual SPDT          | [https://mou.sr/46gGqF1](https://mou.sr/46gGqF1) |
 | U1                    | 29F032, 29F033         | TSOP-40        | Flash EEPROM       | AliExpress or eBay                               |
@@ -210,19 +212,17 @@ If you're having trouble fitting the circuit board into a shell, because the tab
 
 ### Note about SW1
 
-SW1 can be either short or long. If the button is long enough, it will sit inside the shell in a way that lets you press it by lightly pressing on the cartridge shell. This way, you can activate it without removing it from the console. This is helpful if you want to change games via a button press.
-
-- If you want to make the button pressable when the cartridge is fully assembled, you need to find a switch that has an extended stem on AliExpress, eBay, or Amazon (**if you find a compatible switch on Mouser or Digikey, please let me know**). The measurements will be 5.2 mm x 5.2 mm, with a height of 3.5 mm. Sometimes these parts are listed as "4 mm x 4 mm" or "5 mm x 5 mm" instead. Check the datasheet, if available, to see if it'll fit the footprint. They should have listing pictures similar to the ones seen here:
+If SW1 is long enough, it will sit inside the shell in a way that lets you press it by lightly pressing on the cartridge shell. This way, you can activate it without removing it from the console. You need to find a switch that has an extended stem on AliExpress, eBay, or Amazon (**if you find a compatible switch on Mouser or Digikey, please let me know**). The measurements will be 5.2 mm x 5.2 mm, with a height of 3.5 mm. Sometimes these parts are listed as "4 mm x 4 mm" or "5 mm x 5 mm" instead. Check the datasheet, if available, to see if it'll fit the footprint. They should have listing pictures similar to the ones seen here:
 
 ![image](https://github.com/MouseBiteLabs/Game-Boy-MBC3-Multicart/assets/97127539/57f93dff-8af2-446d-9d30-69dc870ae9df)
-
-- If you don't care about pressing the button while it's in the shell, like if you are making a multicart that changes games by cycling the power where you wouldn't need it, then you can simply use the TS18-5-25-SL-260-SMT-TR (https://mou.sr/3uipCQz).
 
 ### Note about SW2, SW3
 
 Instead of using the somewhat pricey switch designated for SW2 and SW3, you can instead just bridge the pads with solder from the middle pad to the pad in the direction you want to set the switch to. For example - in the below picture, SW3A and SW3B are both in the "ON" position in both cases. (Note that the white switches on the right image are switched to the right.)
 
 ![image](https://github.com/MouseBiteLabs/Game-Boy-MBC5-Multicart/assets/97127539/40d1f523-6df1-4596-8ef3-968f2b9fd656)
+
+**REMINDER: SW2A MUST BE IN THE OFF POSITION.**
 
 ### Usable Donor Cartridge Parts
 
@@ -237,7 +237,6 @@ You could probably transfer over most of the 0.1uF capacitors but they're pretty
 
 - The 29F032 and 29F033 have been known to occasionally be defective upon arrival. They're either used, or new old stock, and usually only available from AliExpress.
 - The footprint for the battery can fit a CR2032, CR2025, or CR2016 with solder tabs. The only difference is the mAh capacity (larger number = longer life). If you get Panasonic tabbed batteries, you may have to trim the battery tabs to make them fit on the footprint.
-  - For untabbed coin cells, you can find battery retainer adapters online, <a href="https://retrogamerepairshop.com/products/hdr-game-boy-game-battery-retainer?variant=40511013290156">like this one.</a> However, similar to using a CR2032, this will probably prevent easy pressing of the button in the middle of the cart, if added.
 - Generally, ROM sizes are conveyed in terms of kilobytes and megabytes (KB, MB). RAM size is usually conveyed in terms of kilobits or megabits (Kbit, Mbit). You can convert Kbit and Mbit to KB and MB by dividing Kbit or Mbit by 8. For example, 256 Kbit = 32 KB.
 
 ## Labels
@@ -245,6 +244,16 @@ You could probably transfer over most of the 0.1uF capacitors but they're pretty
 If you want a Bucket Mouse branded label for your cartridge, look no further than <a href="https://krizdingus.com/mousebitelabs/">krizdingus's designs</a>. Special thanks to Kris for designing these, they look awesome! (If you are going to order/print these, use the high-res images hosted on his website, and *keep the labels for personal or non-commercial use only.*)
 
 ![image](https://github.com/MouseBiteLabs/Game-Boy-MBC5-Multicart/assets/97127539/3a4cd3d5-f683-40e3-acfb-1b8c549bb1bb)
+
+## Why does SW2A need to be OFF?
+
+SW2A in the ON position previously allowed the multicart to swap games whenever you power cycled the Game Boy. This was achieved by connecting the /RST line on the Game Boy to the CLK input on the flip-flop. The /RST line was held low when power was off by the RESET output of the TPS3613 battery management IC driving the gate of a FET.
+
+The datasheet says this output is a push-pull output, and implies it will behave normally when power is off and the battery is being relied on for power. However, that is not the behavior I have later found to be true. Instead, if the voltage on the VDD pin is too low (like when the power is turned off), this RESET output floats. This causes the FET to not be asserted, and then allows the /RST line to float.
+
+In Modes 3 or 4, where SW2A is in the ON position, /RST is connected to the flip-flop's CLK input. If /RST floats, then CLK floats, which can cause excess current draw from the flip-flop, draining the battery much faster than expected. Therefore, it is recommended to ONLY use a button to change games, and not to rely on power cycling.
+
+A new board to replace this design with something more suitable will be completed in the future. In the meantime, *do not put SW2A in the OFF position.*
 
 ## Revision History
 
