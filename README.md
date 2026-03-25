@@ -253,7 +253,7 @@ The datasheet says this output is a push-pull output, and implies it will behave
 
 In Modes 3 or 4, where SW2A is in the ON position, /RST is connected to the flip-flop's CLK input. If /RST floats, then CLK floats, which can cause excess current draw from the flip-flop, draining the battery much faster than expected. Therefore, it is recommended to ONLY use a button to change games, and not to rely on power cycling.
 
-A new board to replace this design with something more suitable will be completed in the future. In the meantime, *do not put SW2A in the OFF position.*
+A new board to replace this design with something more suitable will be completed in the future. In the meantime, *do not put SW2A in the ON position.*
 
 ## Revision History
 
